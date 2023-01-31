@@ -28,13 +28,17 @@ yarn test;
 There are the main file used for testing.
 
 Main test file:
+
 - `src/__tests__/App.test.jsx`
 
 Mock used for images:
+
 - `test/__mocks__/fileMock.js`
 
 Main jest config file
+
 - `jest.config.ts`
 
 Main jest setup file to extend jest
+
 - `jest.setup.ts`
