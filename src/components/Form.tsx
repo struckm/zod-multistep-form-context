@@ -1,5 +1,6 @@
 import FormInputs from './FormInputs';
 import useFormContext from '../hooks/useFormContext';
+import { Button, ButtonGroup } from '@chakra-ui/react'
 
 const Form = () => {
   const {
@@ -24,13 +25,18 @@ const Form = () => {
     console.log(JSON.stringify(data));
   };
 
-  const content = (
+  return (
     <form className="form flex-col" onSubmit={handleSubmit}>
       <header className="form-header">
         <h2>{title[page]}</h2>
 
         <div className="button-container">
-          <button
+          <ButtonGroup variant='solid' spacing='6'>
+            <Button colorScheme='blue' onClick={handlePrev}>Prev</Button>
+            <Button colorScheme='blue' onClick={handleNext}>Next</Button>
+            <Button type='submit' colorScheme='whatsapp'>Submit</Button>
+          </ButtonGroup>
+          {/* <button
             type="button"
             className={`button ${prevHide}`}
             onClick={handlePrev}
@@ -46,18 +52,16 @@ const Form = () => {
             disabled={disableNext}
           >
             Next
-          </button>
+          </button> */}
 
-          <button type="submit" className={`button ${submitHide}`} disabled={!canSubmit}>
+          {/* <button type="submit" className={`button ${submitHide}`} disabled={!canSubmit}>
             Submit
-          </button>
+          </button> */}
         </div>
       </header>
 
       <FormInputs />
     </form>
   );
-
-  return content;
 };
 export default Form;
