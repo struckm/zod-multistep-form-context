@@ -8,6 +8,7 @@ const Form = () => {
     setPage,
     data,
     title,
+    validateForm,
     canSubmit,
     disablePrev,
     disableNext,
@@ -20,9 +21,10 @@ const Form = () => {
 
   const handleNext = () => setPage((prev) => prev + 1);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
+    // trigger validation for the current form.
     e.preventDefault();
-    console.log(JSON.stringify(data));
+    validateForm();
   };
 
   return (
